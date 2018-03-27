@@ -17,6 +17,7 @@ import com.example.notes.adapter.NotesListAdapter;
 import com.example.notes.adapter.RecyclerViewItemClick;
 import com.example.notes.model.NotesModel;
 import com.example.notes.presenter.NoteListPresenter;
+import com.example.notes.util.Constants;
 import com.example.notes.viewinterface.NoteListView;
 
 import java.util.List;
@@ -115,7 +116,7 @@ public class MainActivity extends MvpActivity<NoteListPresenter, NoteListView> i
     public void onItemClicked(RecyclerView.Adapter adapter, RecyclerView.ViewHolder viewHolder, int position) {
         final long noteId = ((NotesListAdapter.ViewHolder) viewHolder).getData().getId();
         final Intent intent = new Intent(this, ViewNoteActivity.class);
-        intent.putExtra("id", noteId);
+        intent.putExtra(Constants.IntentKeys.ID, noteId);
         startActivity(intent);
     }
 }

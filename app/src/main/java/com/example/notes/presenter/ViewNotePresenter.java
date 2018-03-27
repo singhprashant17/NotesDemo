@@ -3,7 +3,9 @@ package com.example.notes.presenter;
 import com.example.mvp.MessageType;
 import com.example.mvp.MvpPresenter;
 import com.example.notes.ApplicationClass;
+import com.example.notes.R;
 import com.example.notes.model.NotesModel;
+import com.example.notes.util.Constants;
 import com.example.notes.viewinterface.ViewNoteView;
 
 import javax.inject.Inject;
@@ -30,9 +32,9 @@ public class ViewNotePresenter extends MvpPresenter<ViewNoteView> {
     }
 
     public void getNoteDetails() {
-        final NotesModel notesModel = realm.where(NotesModel.class).equalTo("noteId", view.getNoteId()).findFirst();
+        final NotesModel notesModel = realm.where(NotesModel.class).equalTo(Constants.DatabaseKeys.NOTE_ID, view.getNoteId()).findFirst();
         if (notesModel == null) {
-            view.showMessage(MessageType.ERROR, "Cannot view note");
+            view.showMessage(MessageType.ERROR, R.string.error_opening_note);
             return;
         }
 

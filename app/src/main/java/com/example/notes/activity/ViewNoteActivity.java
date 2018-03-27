@@ -11,6 +11,7 @@ import com.example.mvp.MvpActivity;
 import com.example.mvp.PresenterFactory;
 import com.example.notes.R;
 import com.example.notes.presenter.ViewNotePresenter;
+import com.example.notes.util.Constants;
 import com.example.notes.viewinterface.ViewNoteView;
 
 import butterknife.BindView;
@@ -64,7 +65,7 @@ public class ViewNoteActivity extends MvpActivity<ViewNotePresenter, ViewNoteVie
 
     @Override
     public long getNoteId() {
-        return getIntent().getLongExtra("id", -1);
+        return getIntent().getLongExtra(Constants.IntentKeys.ID, -1);
     }
 
     @Override
