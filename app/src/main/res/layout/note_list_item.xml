@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="15dp"
+    android:layout_margin="@dimen/size_15"
     android:background="@android:color/white">
 
     <LinearLayout
@@ -15,14 +15,14 @@
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="@dimen/size_10"
             tools:text="TextView" />
 
         <TextView
             android:id="@+id/tvNote"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="@dimen/size_10"
             tools:text="TextView" />
     </LinearLayout>
 </android.support.v7.widget.CardView>
